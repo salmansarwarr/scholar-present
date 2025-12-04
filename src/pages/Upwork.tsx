@@ -12,10 +12,10 @@ export default function Upwork() {
 
           {/* Main Header */}
           <div className="max-w-7xl mx-auto px-4 py-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
 
                   {/* Left Social Icons */}
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-3 order-1 md:order-1">
                       <a className="w-9 h-9 rounded-md border border-white flex items-center justify-center hover:bg-white hover:text-black transition">
                           <span className="text-white text-lg">𝕏</span>
                       </a>
@@ -50,12 +50,12 @@ export default function Upwork() {
                   </div>
 
                   {/* Center Logo */}
-                  <div className="text-center leading-none -mt-2">
-                      <h1 className="text-5xl font-black text-yellow-400 drop-shadow-md">
+                  <div className="text-center leading-none -mt-2 order-2 md:order-2">
+                      <h1 className="text-4xl md:text-5xl font-black text-yellow-400 drop-shadow-md">
                           MEME
                       </h1>
                       <div className="relative inline-block mt-[-8px]">
-                          <h2 className="text-5xl font-black text-yellow-400 drop-shadow-md tracking-tight">
+                          <h2 className="text-4xl md:text-5xl font-black text-yellow-400 drop-shadow-md tracking-tight">
                               MINERS
                           </h2>
 
@@ -80,13 +80,13 @@ export default function Upwork() {
                   </div>
 
                   {/* Buy Button */}
-                  <button className="bg-yellow-400 text-black font-bold px-5 py-2.5 rounded-md border border-yellow-600 shadow hover:bg-yellow-500 transition">
+                  <button className="bg-yellow-400 text-black font-bold px-5 py-2.5 rounded-md border border-yellow-600 shadow hover:bg-yellow-500 transition w-full md:w-auto order-3 md:order-3">
                       BUY $MEMEMINER
                   </button>
               </div>
 
               {/* Navigation */}
-              <nav className="flex justify-center space-x-5 mt-6">
+              <nav className="flex flex-wrap justify-center gap-2 md:gap-0 md:space-x-5 mt-6">
                   {["TOKEN", "LAUNCHPAD", "ABOUT", "AIRDROP", "TEAM"].map(
                       (item) => (
                           <a
