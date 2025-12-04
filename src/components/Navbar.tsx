@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
 
   return (
     <>
@@ -19,36 +20,63 @@ const Navbar = () => {
             </div>
 
             {/* Navigation Links */}
-            <div className="flex items-center space-x-8">
-              <a href="#home" className="text-gray-900 hover:text-gray-600 font-bold">
-                Home
-              </a>
-              <div className="relative group">
-                <button className="text-gray-900 hover:text-gray-600 font-medium flex items-center">
-                  Solutions
-                  <svg 
-                    className="ml-1 h-4 w-4" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-              </div>
-              <a href="#pricing" className="text-gray-900 hover:text-gray-600 font-medium">
-                Pricing
-              </a>
-              <a href="#about" className="text-gray-900 hover:text-gray-600 font-medium">
-                About
-              </a>
-              <a href="#blog" className="text-gray-900 hover:text-gray-600 font-medium">
-                Blog
-              </a>
-              <a href="#contact" className="text-gray-900 hover:text-gray-600 font-medium">
-                Contact
-              </a>
-            </div>
+{/* Navigation Links */}
+<div className="flex items-center space-x-8 relative">
+  <a href="#home" className="text-gray-900 hover:text-gray-600 font-bold">
+    Home
+  </a>
+
+  {/* Solutions Dropdown */}
+  <div className="relative group">
+    <button className="text-gray-900 hover:text-gray-600 font-medium flex items-center">
+      Solutions
+      <svg 
+        className="ml-1 h-4 w-4" 
+        fill="none" 
+        stroke="currentColor" 
+        viewBox="0 0 24 24"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+
+    {/* Dropdown Menu */}
+    <div className="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+      <a href="#messaging" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+        Messaging Module
+      </a>
+      <a href="#collections" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+        Collections Module
+      </a>
+      <a href="#finance" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+        Finance Module
+      </a>
+      <a href="#attendance" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+        Attendance Solution
+      </a>
+      <a href="#calendar" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+        Calendar Solution
+      </a>
+      <a href="#documents" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+        Documents Solution
+      </a>
+    </div>
+  </div>
+
+  <a href="#pricing" className="text-gray-900 hover:text-gray-600 font-medium">
+    Pricing
+  </a>
+  <a href="#about" className="text-gray-900 hover:text-gray-600 font-medium">
+    About
+  </a>
+  <a href="#blog" className="text-gray-900 hover:text-gray-600 font-medium">
+    Blog
+  </a>
+  <a href="#contact" className="text-gray-900 hover:text-gray-600 font-medium">
+    Contact
+  </a>
+</div>
+
 
             {/* Right side buttons */}
             <div className="flex items-center space-x-6">
@@ -73,7 +101,7 @@ const Navbar = () => {
       <div className="lg:hidden fixed top-16 right-4 z-50">
         <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="text-gray-900 hover:text-gray-600 focus:outline-none bg-white/80 backdrop-blur-sm p-2 rounded-lg shadow-md"
+          className={`${isMenuOpen && 'hidden'} text-gray-900 hover:text-gray-600 focus:outline-none bg-white/80 backdrop-blur-sm p-2 rounded-lg shadow-md`}
           aria-label="Toggle menu"
         >
           {isMenuOpen ? (
@@ -102,78 +130,145 @@ const Navbar = () => {
 
       {/* Mobile Full Screen Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-white z-40 overflow-y-auto">
-          <div className="flex flex-col items-center justify-center min-h-screen px-8 py-20">
-            {/* Logo at the top */}
-            <div className="mb-12">
-              <img 
-                src="/logo.png"
-                alt="Scholar Present" 
-                className="h-[82px] w-[103px]"
-              />
-            </div>
-
-            {/* Menu Items */}
-            <div className="flex flex-col items-center space-y-6 w-full">
-              <a 
-                href="#home" 
-                className="text-gray-900 hover:text-gray-600 font-bold text-xl py-2"
+        <div className="lg:hidden fixed inset-0 bg-linear-to-b from-[#6AB04C] to-[#8BC34A] z-40 overflow-y-auto">
+          <div className="flex flex-col min-h-screen px-6 py-8">
+            {/* Close Button */}
+            <div className="flex justify-end mb-8">
+              <button 
                 onClick={() => setIsMenuOpen(false)}
+                className="bg-white text-gray-900 p-2 rounded-lg shadow-md"
+                aria-label="Close menu"
               >
-                Home
-              </a>
-              <button className="text-gray-900 hover:text-gray-600 font-medium text-xl flex items-center py-2">
-                Solutions
                 <svg 
-                  className="ml-1 h-5 w-5" 
+                  className="h-6 w-6" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
+            </div>
+
+            {/* Logo and Brand */}
+            <div className="mb-8">
+              <h1 className="text-white text-3xl font-bold">Scholar Present</h1>
+            </div>
+
+            {/* Menu Items */}
+            <div className="flex flex-col space-y-4 flex-1">
+              <a 
+                href="#home" 
+                className="text-white font-medium text-lg py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </a>
+
+              {/* Solutions Dropdown */}
+              <div>
+                <button 
+                  onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+                  className={`${isSolutionsOpen && 'bg-[rgba(102,183,114,0.2)]'} w-full text-left text-white font-medium text-lg py-3 px-4 border border-white/40 rounded-lg flex items-center justify-between`}
+                >
+                  Solutions
+                  <svg 
+                    className={`h-5 w-5 transition-transform ${isSolutionsOpen ? 'rotate-180' : ''}`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {/* Solutions Submenu */}
+                {isSolutionsOpen && (
+                  <div className="mt-3 ml-6 space-y-3">
+                    <a 
+                      href="#messaging" 
+                      className="block text-white text-base py-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Messaging Module
+                    </a>
+                    <a 
+                      href="#collections" 
+                      className="block text-white text-base py-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Collections Module
+                    </a>
+                    <a 
+                      href="#finance" 
+                      className="block text-white text-base py-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Finance Module
+                    </a>
+                    <a 
+                      href="#attendance" 
+                      className="block text-white text-base py-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Attendance Solution
+                    </a>
+                    <a 
+                      href="#calendar" 
+                      className="block text-white text-base py-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Calendar Solution
+                    </a>
+                    <a 
+                      href="#documents" 
+                      className="block text-white text-base py-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Documents Solution
+                    </a>
+                  </div>
+                )}
+              </div>
+
               <a 
                 href="#pricing" 
-                className="text-gray-900 hover:text-gray-600 font-medium text-xl py-2"
+                className="text-white font-medium text-lg py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Pricing
               </a>
               <a 
                 href="#about" 
-                className="text-gray-900 hover:text-gray-600 font-medium text-xl py-2"
+                className="text-white font-medium text-lg py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </a>
               <a 
-                href="#blog" 
-                className="text-gray-900 hover:text-gray-600 font-medium text-xl py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Blog
-              </a>
-              <a 
                 href="#contact" 
-                className="text-gray-900 hover:text-gray-600 font-medium text-xl py-2"
+                className="text-white font-medium text-lg py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </a>
-              <a 
-                href="#join" 
-                className="text-gray-900 hover:text-gray-600 font-medium text-xl py-2 mt-4"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Join My School
-              </a>
+            </div>
+
+            {/* Bottom Buttons */}
+            <div className="space-y-4 mt-14 mb-8">
               <a 
                 href="#signin" 
-                className="bg-green-600 hover:bg-green-700 text-white font-medium px-12 py-4 rounded-full transition-colors duration-200 text-xl mt-6"
+                className="block w-full bg-[#2D7A3E] hover:bg-[#246530] text-white font-medium px-8 py-4 rounded-full text-center transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sign In
+              </a>
+              <a 
+                href="#join" 
+                className="block w-full bg-transparent border-2 border-white hover:bg-white/10 text-white font-medium px-8 py-4 rounded-full text-center transition-colors duration-200"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Join My School
               </a>
             </div>
           </div>

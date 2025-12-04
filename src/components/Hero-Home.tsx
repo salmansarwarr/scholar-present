@@ -1,0 +1,115 @@
+import { useState } from "react";
+import BlueBtn from "./BlueBtn";
+import SeeHowItWorksModal from "./SeeHowItWorksModal";
+
+const HeroHome = ({
+    heroImg,
+    heroTxt,
+}: {
+    heroImg: string;
+    heroTxt: string;
+}) => {
+    const [showModal, setShowModal] = useState(false);
+
+    const handleOpenModal = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
+    return (
+        <section className="relative  w-full overflow-hidden md:max-h-[634px]">
+            {showModal && (
+                <SeeHowItWorksModal isOpen onClose={handleCloseModal} />
+            )}
+            {/* Background Image */}
+            <div
+                className="
+  absolute inset-0 bg-cover bg-center sm:bg-top-left bg-no-repeat
+  bg-[linear-gradient(180deg,rgba(45,158,83,0)_67.87%,#2D9E53_100%),
+      linear-gradient(90deg,rgba(0,0,0,0)_50%,rgba(0,0,0,0.6)_100%)]"
+                style={{ backgroundImage: `url(${heroImg})` }}
+            ></div>
+
+            {/* Content */}
+            <div className="relative z-10 h-[1000px] md:h-[650px] lg:h-[600px] xl:h-[610px] 2xl:h-[700px] lg:min-h-0 flex items-end lg:items-end max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-32 lg:pb-10">
+                <div className="flex flex-col lg:flex-row gap-2 sm:gap-10 lg:gap-12 items-center text-center lg:text-left lg:items-end w-full">
+                    {/* Left Column - Text Content */}
+                    <div className="text-white space-y-2 lg:space-y-4 sm:space-y-6 max-w-[700px] w-full">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+                            {heroTxt.split("<br/>").map((line, i) => (
+                                <span key={i}>
+                                    {line}
+                                    {i < heroTxt.split("<br/>").length - 1 && (
+                                        <br />
+                                    )}
+                                </span>
+                            ))}
+                        </h1>
+
+                        <p className="text-[15px] sm:text-[17px] text-gray-200 leading-relaxed">
+                            ScholarPresent helps school principals and teachers
+                            cut through the chaos of administration by bringing
+                            everything together in one integrated platform. This
+                            makes it easier to engage parents and students,
+                            reduce admin burdens, and run schools more smoothly.
+                        </p>
+
+                        {/* CTA Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-1 lg:gap-3 sm:gap-4 pt-2 sm:pt-4">
+                            <BlueBtn handleClick={handleOpenModal}>
+                                See How It Works (Free Demo)
+                            </BlueBtn>
+                            <a
+                                href="#signin"
+                                className="text-white hover:text-gray-200 px-6 sm:px-8 py-3 sm:py-4 text-center text-[14px] sm:text-[16px] underline underline-offset-4"
+                            >
+                                Already Using Our Platform? Sign In
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Right Column - Stats Card */}
+                    <div className="lg:ml-auto w-full lg:w-auto md:hidden lg:block max-w-xs mx-auto lg:mx-0">
+                        <div className="w-full">
+                            <img
+                                src="/avatars.png"
+                                alt="Member"
+                                className="border-white mx-auto lg:w-full h-auto w-40"
+                            />
+
+                            {/* Stats */}
+                            <div className="space-y-1 mt-2">
+                                <h3 className="text-[24px] sm:text-[28px] font-bold text-white">
+                                    <span className="text-[#D9FF00]">12k+</span>{" "}
+                                    <span className="font-bold">Members</span>
+                                </h3>
+                                <p className="text-gray-200 text-[13px] sm:text-[14px]">
+                                    Using Scholar Present Platform
+                                </p>
+                            </div>
+
+                            {/* Progress Bar */}
+                            <div className="hidden lg:block mt-4 sm:mt-6 space-y-2">
+                                <div className="flex justify-between text-white text-sm font-medium">
+                                    <span>01</span>
+                                    <span>03</span>
+                                </div>
+                                <div className="w-full bg-white h-1.5 rounded-full">
+                                    <div
+                                        className="bg-yellow-400 h-1.5 rounded-full transition-all duration-300"
+                                        style={{ width: "33%" }}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default HeroHome;
