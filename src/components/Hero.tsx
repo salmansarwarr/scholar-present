@@ -59,6 +59,9 @@ const HeroSection = ({
                         <p className="text-[15px] sm:text-[17px] text-gray-200 leading-relaxed">
                             {heroDesc}
                         </p>
+                <button className={`bg-[#2D9E53] w-full text-[16px] max-w-[340px] text-center justify-center cursor-pointer max-h-16 text-white px-8 py-4 rounded-full transition-colors font-medium items-center gap-2`}>
+                Join my school
+        </button>
                     </div>
                 </div>
             </div>
