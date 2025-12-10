@@ -1,4 +1,4 @@
-import { Building2, CheckCircle, Clock, ShieldCheck } from "lucide-react";
+import { Building2, Clock, ShieldCheck } from "lucide-react";
 import SupportForm from "./SupportForm";
 
 const features = [
