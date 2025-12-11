@@ -2,13 +2,15 @@ import AboutUsSection from "../components/AboutUsSection";
 import HeroSection from "../components/Hero";
 import Team from "../components/Team";
 import TestimonialCard from "../components/TestimonialCard";
+import heroDesktop from "../assets/hero/about.png";
+import heroMobile from "../assets/hero/about-mob.png";
 
 const AboutUs = () => {
     return (
         <div className="bg-[#f6f6f6]">
             <HeroSection
-                heroImg="/hero/about.png"
-                heroImgMobile="/hero/about-mob.png"
+                heroImg={heroDesktop}
+                heroImgMobile={heroMobile}
                 heroTxt="We Believe Your School’s Resources Should Be Spent on Learners, Not Paperwork."
                 heroDesc="Your mission is to educate and protect children. Our mission is to clear away the administrative chaos that stands in your way."
             />

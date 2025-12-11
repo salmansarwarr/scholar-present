@@ -25,12 +25,19 @@ const HeroHome = ({
                 <SeeHowItWorksModal isOpen onClose={handleCloseModal} />
             )}
             {/* Background Image */}
+            <div className="absolute inset-0">
+                <img
+                    src={heroImg}
+                    loading="eager"
+                    className="w-full h-full object-cover"
+                />
+            </div>
+
             <div
                 className="
   absolute inset-0 bg-cover bg-center sm:bg-top-left bg-no-repeat
   bg-[linear-gradient(180deg,rgba(45,158,83,0)_67.87%,#2D9E53_100%),
       linear-gradient(90deg,rgba(0,0,0,0)_50%,rgba(0,0,0,0.6)_100%)]"
-                style={{ backgroundImage: `url(${heroImg})` }}
             ></div>
 
             {/* Content */}

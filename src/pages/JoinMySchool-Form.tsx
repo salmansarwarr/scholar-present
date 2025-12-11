@@ -1,17 +1,33 @@
 import { HomeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import FormSection from "../components/FormSection";
+import heroDesktop from "../assets/hero/form.png";
+import heroMobile from "../assets/hero/form-mob.png";
 
 const JoinMySchoolForm = () => {
     return (
         <div className="bg-[#f6f7f7]">
             <section className="relative  w-full overflow-hidden md:max-h-[634px]">
                 {/* Background Image */}
+                <div className="absolute inset-0 hidden md:block">
+    <img
+        src={heroDesktop}
+        loading="eager"
+        className="w-full h-full object-cover"
+    />
+</div>
+
+<div className="absolute inset-0 md:hidden">
+    <img
+        src={heroMobile}
+        loading="lazy"
+        className="w-full h-full object-cover"
+    />
+</div>
                 <div
                     className="hidden md:block
   absolute inset-0 bg-cover bg-center bg-no-repeat
   bg-[linear-gradient(180deg,rgba(45,158,83,0)_67.87%,#2D9E53_100%),
       linear-gradient(90deg,rgba(0,0,0,0)_50%,rgba(0,0,0,0.6)_100%)]"
-                    style={{ backgroundImage: `url(/hero/form.png)` }}
                 ></div>
 
                 <div
@@ -19,7 +35,6 @@ const JoinMySchoolForm = () => {
   absolute inset-0 bg-cover bg-center sm:bg-top-left bg-no-repeat
   bg-[linear-gradient(180deg,rgba(45,158,83,0)_67.87%,#2D9E53_100%),
       linear-gradient(90deg,rgba(0,0,0,0)_50%,rgba(0,0,0,0.6)_100%)]"
-                    style={{ backgroundImage: `url(/hero/form-mob.png)` }}
                 ></div>
 
                 {/* Content */}

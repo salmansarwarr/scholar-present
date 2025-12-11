@@ -1,5 +1,7 @@
 import HeroSection from "../components/Hero";
 import SolutionCard from "../components/SoultionCard";
+import heroDesktop from "../assets/hero/solutions.png";
+import heroMobile from "../assets/hero/solutions-mob.png";
 
 const cards = [
     {
@@ -130,8 +132,8 @@ const Solutions = () => {
     return (
         <div>
             <HeroSection
-                heroImg="/hero/solutions.png"
-                heroImgMobile="/hero/solutions-mob.png"
+                heroImg={heroDesktop}
+                heroImgMobile={heroMobile}
                 heroTxt="One Platform, Every <br/> Solution"
                 heroDesc="Tired of juggling a dozen different tools? We bring all the critical functions of your school into one simple, powerful platform. Solve your biggest challenges and unlock time and resources for what matters most."
             />

@@ -24,12 +24,27 @@ const HeroSection = ({
                 <SeeHowItWorksModal isOpen onClose={handleCloseModal} />
             )}
             {/* Background Image */}
+            <div className="absolute inset-0 hidden md:block">
+    <img
+        src={heroImg}
+        loading="eager"
+        className="w-full h-full object-cover"
+    />
+</div>
+
+<div className="absolute inset-0 md:hidden">
+    <img
+        src={heroImgMobile}
+        loading="lazy"
+        className="w-full h-full object-cover"
+    />
+</div>
+
             <div
                 className="hidden md:block
   absolute inset-0 bg-cover bg-center bg-no-repeat
   bg-[linear-gradient(180deg,rgba(45,158,83,0)_67.87%,#2D9E53_100%),
       linear-gradient(90deg,rgba(0,0,0,0)_50%,rgba(0,0,0,0.6)_100%)]"
-                style={{ backgroundImage: `url(${heroImg})` }}
             ></div>
 
             <div
@@ -37,7 +52,7 @@ const HeroSection = ({
   absolute inset-0 bg-cover bg-center sm:bg-top-left bg-no-repeat
   bg-[linear-gradient(180deg,rgba(45,158,83,0)_67.87%,#2D9E53_100%),
       linear-gradient(90deg,rgba(0,0,0,0)_50%,rgba(0,0,0,0.6)_100%)]"
-                style={{ backgroundImage: `url(${heroImgMobile})` }}
+              
             ></div>
 
             {/* Content */}

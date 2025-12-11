@@ -1,11 +1,13 @@
 import HeroSection from "../components/Hero";
+import heroDesktop from "../assets/hero/join.png";
+import heroMobile from "../assets/hero/join-mob.png";
 
 const JoinMySchool = () => {
     return (
         <div className="bg-[#f6f7f7]">
             <HeroSection
-                heroImg="/hero/join.png"
-                heroImgMobile="/hero/join-mob.png"
+                heroImg={heroDesktop}
+                heroImgMobile={heroMobile}
                 heroTxt="Easily Connect with Your School Community"
                 heroDesc="Whether you're a parent, teacher, or student - stay informed, engaged, and connected with your school community in one secure place."
             />

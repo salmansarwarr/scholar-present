@@ -12,7 +12,7 @@ const features = [
 
 const CheckIcon = () => (
     <svg 
-      className="w-5 h-5 flex-shrink-0" 
+      className="w-5 h-5 shrink-0" 
       viewBox="0 0 24 24" 
       fill="none" 
       stroke="currentColor"
