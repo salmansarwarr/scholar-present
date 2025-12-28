@@ -8,7 +8,7 @@ const BetterWay = () => {
                             There's a Better Way to Lead Your School
                         </h2>
                         <p className="text-gray-600 mb-4 lg:mb-8">
-                            At SchoolPresent, we believe a principal's focus
+                            At ScholarPresent, we believe a principal's focus
                             should be on leading teaching and learning, not
                             managing everything manually. Your expertise is best
                             spent shaping your school's future, not drowning in

@@ -20,7 +20,7 @@ const HeroHome = ({
     };
 
     return (
-        <section className="relative  w-full overflow-hidden md:max-h-[634px]">
+        <section className="relative  w-full overflow-hidden md:max-h-208.5">
             {showModal && (
                 <SeeHowItWorksModal isOpen onClose={handleCloseModal} />
             )}
@@ -29,7 +29,7 @@ const HeroHome = ({
                 <img
                     src={heroImg}
                     loading="eager"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full min-h-full object-cover object-[center_25%]"
                 />
             </div>
 
@@ -41,11 +41,11 @@ const HeroHome = ({
             ></div>
 
             {/* Content */}
-            <div className="relative z-10 h-[1000px] md:h-[650px] lg:h-[600px] xl:h-[610px] 2xl:h-[700px] lg:min-h-0 flex items-end lg:items-end max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-32 lg:pb-10">
+            <div className="relative z-10 h-250 md:h-162.5 lg:h-150 xl:h-152.5 2xl:h-175 lg:min-h-0 flex items-end lg:items-end mx-auto px-4 sm:px-6 xl:px-14 2xl:px-32 py-12 sm:py-16 lg:py-32 lg:pb-10">
                 <div className="flex flex-col lg:flex-row gap-2 sm:gap-10 lg:gap-12 items-center text-center lg:text-left lg:items-end w-full">
                     {/* Left Column - Text Content */}
-                    <div className="text-white space-y-2 lg:space-y-4 sm:space-y-6 max-w-[700px] w-full">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+                    <div className="text-white space-y-2 lg:space-y-4 sm:space-y-6 max-w-175 xl:max-w-216.5 w-full">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-[60px] font-bold leading-tight">
                             {heroTxt.split("<br/>").map((line, i) => (
                                 <span key={i}>
                                     {line}
@@ -56,7 +56,7 @@ const HeroHome = ({
                             ))}
                         </h1>
 
-                        <p className="text-[15px] sm:text-[17px] text-gray-200 leading-relaxed">
+                        <p className="text-[15px] sm:text-[17px] xl:text-[18px] text-gray-200 leading-relaxed">
                             ScholarPresent helps school principals and teachers
                             cut through the chaos of administration by bringing
                             everything together in one integrated platform. This
