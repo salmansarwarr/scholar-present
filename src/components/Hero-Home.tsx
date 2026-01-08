@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import BlueBtn from "./BlueBtn";
 import SeeHowItWorksModal from "./SeeHowItWorksModal";
 
@@ -41,12 +41,6 @@ const HeroHome = ({
 
     const handleCloseModal = () => {
         setShowModal(false);
-    };
-
-    const goToSlide = (index: number) => {
-        setCurrentSlide(index);
-        setPrevTranslate(0);
-        setCurrentTranslate(0);
     };
 
     // Touch/Mouse events

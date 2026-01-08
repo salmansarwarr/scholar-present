@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import BlueBtn from "./BlueBtn";
 
 const Solutions = () => {
