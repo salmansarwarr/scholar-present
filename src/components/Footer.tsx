@@ -15,25 +15,29 @@ const Footer = () => {
                     </h3>
                     <div className="flex space-x-4 justify-center xl:justify-start pb-8 pt-3 xl:pt-6">
                         <a
-                            href="#"
+                            href="https://www.youtube.com/watch?v=gq-KzB2io0o"
+                            target="_blank"
                             className="rounded-full border border-[#443883] bg-[#17102F] w-10 h-10 flex items-center justify-center"
                         >
-                            <img src="icons/tiktok.png" alt="tiktok" />
+                            <img src="icons/yt.png" alt="tiktok" />
                         </a>
                         <a
-                            href="#"
+                            href="https://x.com/ScholarPresent"
+                            target="_blank"
                             className="rounded-full border border-[#443883] bg-[#17102F] w-10 h-10 flex items-center justify-center"
                         >
                             <img src="icons/twitter.png" alt="Twitter" />
                         </a>
                         <a
-                            href="#"
+                            href="https://www.instagram.com/scholar_present/"
+                            target="_blank"
                             className="rounded-full border border-[#443883] bg-[#17102F] w-10 h-10 flex items-center justify-center"
                         >
                             <img src="icons/ig.png" alt="ig" />
                         </a>
                         <a
-                            href="#"
+                            href="https://www.facebook.com/profile.php?id=61555926503880"
+                            target="_blank"
                             className="rounded-full border border-[#443883] bg-[#17102F] w-10 h-10 flex items-center justify-center"
                         >
                             <img src="icons/facebook.png" alt="facebook" />
@@ -91,7 +95,7 @@ const Footer = () => {
             </div>
 
             <div className="mt-10 xl:mt-16 border-t border-[#E5E5E63D] pt-5 xl:pt-6 text-center text-sm">
-                © 2023 [YourCompanyName] | Privacy Policy | Terms of Service
+                © 2023 iConnect99 Pty(LTD) | <a href="https://scholarpresent.com/privacypolicy" target="_blank">Privacy Policy </a> | <a href="https://scholarpresent-downloads.s3.af-south-1.amazonaws.com/ScholarPresentTermsofService.pdf" target="_blank">Terms of Service</a>
             </div>
         </footer>
     );

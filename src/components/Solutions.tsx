@@ -1,6 +1,9 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import BlueBtn from "./BlueBtn";
 
 const Solutions = () => {
+    const navigate = useNavigate();
+
     return (
         <section className="py-20 bg-[#f6f6f6]">
             <div className="container mx-auto px-6">
@@ -8,7 +11,7 @@ const Solutions = () => {
                     <h2 className="text-[29.7px] md:text-4xl font-bold text-gray-900 mb-4 max-w-[750px] lg:text-left">
                         How One Platform Solves Your Biggest Challenges
                     </h2>
-                    <BlueBtn withArrow classNames="hidden lg:inline-flex">Explore All Solutions</BlueBtn>
+                    <BlueBtn handleClick={() => navigate("/solutions")} withArrow classNames="hidden lg:inline-flex">Explore All Solutions</BlueBtn>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -108,13 +111,13 @@ const Solutions = () => {
                             Collections
                         </h3>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                        Digital hub for effortless document storage and sharing, saving time, money, and trees.
+                        From reminders to reports, ScholarPresent streamlines every step of fee collection.
                         </p>
                     </div>
                 </div>
 
                 <div className="text-center mt-12 lg:hidden">
-                    <BlueBtn withArrow>Explore All Solutions</BlueBtn>
+                    <BlueBtn handleClick={() => navigate("/solutions")} withArrow>Explore All Solutions</BlueBtn>
                 </div>
             </div>
         </section>

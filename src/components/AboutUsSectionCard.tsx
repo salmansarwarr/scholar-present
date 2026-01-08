@@ -9,7 +9,7 @@ const AboutUsSectionCard = ({ cardNo }: { cardNo: number }) => {
                         <h1 className="text-xl font-bold text-gray-900">
                             {cardNo === 2
                                 ? "We believe"
-                                : "We built **[Platform Name]** as the all-in-one solution we wished existed. It’s not just a suite of tools; it’s a new way to work:"}
+                                : "We built Scholar Present as the all-in-one solution we wished existed. It’s not just a suite of tools; it’s a new way to work:"}
                         </h1>
                         {cardNo === 2 ? (
                             <ul className="space-y-3">

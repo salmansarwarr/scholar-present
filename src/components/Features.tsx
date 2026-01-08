@@ -16,7 +16,7 @@ const Features = () => {
                         <p className="text-gray-600">
                             Are you being overwhelmed by reporting,
                             administrative tasks and unrealistic deadlines? Are
-                            you report being overwhelmed by administrative tasks
+                            you being overwhelmed by administrative tasks
                             and unrealistic deadlines?
                         </p>
                     </div>

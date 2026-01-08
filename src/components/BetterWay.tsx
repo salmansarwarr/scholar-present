@@ -3,7 +3,7 @@ const BetterWay = () => {
         <section className="py-10 lg:py-20 bg-white">
             <div className="container mx-auto px-4 lg:px-14">
                 <div className="grid lg:grid-cols-2 gap-12 items-center justify-center">
-                    <div className="max-w-[640px]">
+                    <div className="max-w-160">
                         <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-8">
                             There's a Better Way to Lead Your School
                         </h2>

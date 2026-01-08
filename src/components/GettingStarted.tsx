@@ -1,7 +1,11 @@
 import BlueBtn from "./BlueBtn";
 import { DatabaseIcon, RocketIcon } from "lucide-react";
+import SeeHowItWorksModal from "./SeeHowItWorksModal";
+import { useState } from "react";
 
 const GettingStarted = () => {
+    const [showModal, setShowModal] = useState(false);
+    
     const steps = [
         {
             number: 1,
@@ -39,6 +43,8 @@ const GettingStarted = () => {
     ];
 
     return (
+        <>
+        <SeeHowItWorksModal isOpen={showModal} onClose={() => setShowModal(false)}/>
         <section className="py-16 lg:py-24 from-gray-50 to-white">
             <div className="container mx-auto px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 justify-center items-center lg:items-stretch">
@@ -50,7 +56,7 @@ const GettingStarted = () => {
                             is Simple
                         </h2>
                         <div className="lg:inline-flex hidden justify-center lg:justify-start">
-                            <BlueBtn>Get Started</BlueBtn>
+                            <BlueBtn handleClick={() => setShowModal(true)}>Get Started</BlueBtn>
                         </div>
                     </div>
 
@@ -96,10 +102,11 @@ const GettingStarted = () => {
                         ))}
                     </div>
 
-                    <BlueBtn classNames="w-full lg:hidden">Get Started</BlueBtn>
+                    <BlueBtn handleClick={() => setShowModal(true)} classNames="w-full lg:hidden">Get Started</BlueBtn>
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

@@ -25,20 +25,20 @@ const HeroSection = ({
             )}
             {/* Background Image */}
             <div className="absolute inset-0 hidden md:block">
-    <img
-        src={heroImg}
-        loading="eager"
-        className="w-full h-full object-cover"
-    />
-</div>
+                <img
+                    src={heroImg}
+                    loading="eager"
+                    className="w-full h-full object-cover"
+                />
+            </div>
 
-<div className="absolute inset-0 md:hidden">
-    <img
-        src={heroImgMobile}
-        loading="lazy"
-        className="w-full h-full object-cover"
-    />
-</div>
+            <div className="absolute inset-0 md:hidden">
+                <img
+                    src={heroImgMobile}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                />
+            </div>
 
             <div
                 className="hidden md:block
@@ -52,7 +52,6 @@ const HeroSection = ({
   absolute inset-0 bg-cover bg-center sm:bg-top-left bg-no-repeat
   bg-[linear-gradient(180deg,rgba(45,158,83,0)_67.87%,#2D9E53_100%),
       linear-gradient(90deg,rgba(0,0,0,0)_50%,rgba(0,0,0,0.6)_100%)]"
-              
             ></div>
 
             {/* Content */}
@@ -74,9 +73,12 @@ const HeroSection = ({
                         <p className="text-[15px] sm:text-[17px] text-gray-200 leading-relaxed">
                             {heroDesc}
                         </p>
-                <button className={`bg-[#2D9E53] w-full text-[16px] max-w-[340px] text-center justify-center cursor-pointer max-h-16 text-white px-8 py-4 rounded-full transition-colors font-medium items-center gap-2`}>
-                Join my school
-        </button>
+                        <a href="https://platform.scholarpresent.com/joinschool" target="_blank"
+                        
+                            className={`bg-[#2D9E53] w-full text-[16px] max-w-85 text-center justify-center cursor-pointer max-h-16 text-white px-8 py-4 rounded-full transition-colors font-medium items-center gap-2`}
+                        >
+                            Join my school
+                        </a>
                     </div>
                 </div>
             </div>
