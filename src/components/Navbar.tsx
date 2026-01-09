@@ -17,7 +17,7 @@ const Navbar = () => {
                             <img
                                 src="/logo.png"
                                 alt="Scholar Present"
-                                className="h-[82px] w-[103px]"
+                                className="h-20.5 w-25.75"
                             />
                         </div>
 
@@ -134,7 +134,8 @@ const Navbar = () => {
                         {/* Right side buttons */}
                         <div className="flex items-center space-x-6">
                             <a
-                                href="/join"
+                                href="https://platform.scholarpresent.com/joinschool"
+                                target="_blank"
                                 className={`${
                                     pathname === "/join"
                                         ? "font-extrabold"
@@ -203,7 +204,7 @@ const Navbar = () => {
 
             {/* Mobile Full Screen Menu */}
             {isMenuOpen && (
-                <div className="lg:hidden fixed inset-0 bg-gradient-to-b from-[#6AB04C] to-[#8BC34A] z-40 overflow-y-auto">
+                <div className="lg:hidden fixed inset-0 bg-linear-to-b from-[#6AB04C] to-[#8BC34A] z-40 overflow-y-auto">
                     <div className="flex flex-col min-h-screen px-6 py-8">
                         {/* Close Button */}
                         <div className="flex justify-end mb-8">
@@ -370,7 +371,8 @@ const Navbar = () => {
                                 Sign In
                             </a>
                             <a
-                                href="/join"
+                                href="https://platform.scholarpresent.com/joinschool"
+                                target="_blank"
                                 className={`${
                                     pathname === "/join"
                                         ? "font-extrabold"

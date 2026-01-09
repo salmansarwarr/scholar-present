@@ -1,5 +1,8 @@
 import { CheckIcon } from "lucide-react";
 import BlueBtn from "./BlueBtn";
+import SeeHowItWorksModal from "./SeeHowItWorksModal";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface SolutionCardProps {
     img: string;
@@ -20,7 +23,12 @@ const SolutionCard = ({
     solutionPoints,
     benefitPoints,
 }: SolutionCardProps) => {
+    const [openModdal, setOpenModdal] = useState(false);
+    const navigate = useNavigate();
+    
     return (
+        <>
+  <SeeHowItWorksModal isOpen={openModdal} onClose={() => setOpenModdal(false)} />
         <div className="max-w-6xl py-5 md:py-8 mx-auto  rounded-2xl overflow-hidden">
             <div className=" text-emerald-500 uppercase text-center font-semibold px-3 py-1 rounded mb-2">
                 {module}
@@ -89,8 +97,9 @@ const SolutionCard = ({
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <BlueBtn>Book a Demo</BlueBtn>
+                        <BlueBtn handleClick={() => setOpenModdal(true)}>Book a Demo</BlueBtn>
                         <button
+                        onClick={() => navigate("/pricing")}
                             className={`border border-[#0066BF] text-center justify-center cursor-pointer max-h-16 text-[#0066BF] px-8 py-3 rounded-full transition-colors font-medium inline-flex items-center gap-2`}
                         >
                             Learn More
@@ -99,6 +108,7 @@ const SolutionCard = ({
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

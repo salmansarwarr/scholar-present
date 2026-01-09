@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import BlueBtn from "./BlueBtn";
 import SeeHowItWorksModal from "./SeeHowItWorksModal";
+import AvatarStack from "./AvatarStack";
 
 const HeroHome = ({
     heroImg,
@@ -195,12 +196,13 @@ const HeroHome = ({
                     {/* Right Column - Stats Card */}
                     <div className="lg:ml-auto w-full lg:w-auto md:hidden lg:block max-w-xs mx-auto lg:mx-0">
                         <div className="w-full">
-                            <img
+                            {/* <img
                                 src="/avatars.png"
                                 alt="Member"
                                 className="border-white mx-auto lg:w-full h-auto w-40 pointer-events-none"
                                 draggable={false}
-                            />
+                            /> */}
+                            <AvatarStack/>
 
                             {/* Stats */}
                             <div className="space-y-1 mt-2">

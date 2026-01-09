@@ -18,9 +18,9 @@ const Team = () => {
                         />
                     </div>
                     <h3 className="text-xl font-bold mb-1 mt-4 xl:mt-4">
-                        Fahim Faysal Nabil
+                    Mulalo Nethononda
                     </h3>
-                    <p className="text-gray-600">Founder & CEO</p>
+                    <p className="text-gray-600">CE: Sales & Distribution</p>
                 </div>
 
                 <div className="self-start">
@@ -45,9 +45,9 @@ const Team = () => {
                         </div>
                     </div>
                     <h3 className="text-xl font-bold mb-1 mt-2">
-                        Fahim Faysal Nabil
+                    Lenkwe Makhubela
                     </h3>
-                    <p className="text-gray-600">Founder & CEO</p>
+                    <p className="text-gray-600">CE: Chief Executive Officer</p>
                 </div>
 
                 {/* Third Team Member */}
@@ -60,9 +60,9 @@ const Team = () => {
                         />
                     </div>
                     <h3 className="text-xl font-bold mb-1 mt-4 xl:mt-4">
-                        Fahim Faysal Nabil
+                    Nomthi Nkosi
                     </h3>
-                    <p className="text-gray-600">Founder & CEO</p>
+                    <p className="text-gray-600">Sales: Pretoria East</p>
                 </div>
             </div>
         </div>
