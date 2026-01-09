@@ -1,5 +1,3 @@
-import React from 'react';
-
 const AvatarStack = () => {
   const avatars = [
     { id: 1, src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm-fmoGetp6VX_BcpKVw4GtJO2bvLR-fOA0Q&s', alt: 'User 1' },
