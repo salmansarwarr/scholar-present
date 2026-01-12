@@ -8,7 +8,7 @@ const TestimonialCard = () => {
         if (no) {
             setCurrTestimonialNo(no);
             return;
-        };
+        }
 
         if (direction === "left") {
             setCurrTestimonialNo((prev) => (prev === 1 ? 3 : prev - 1));
@@ -30,7 +30,7 @@ const TestimonialCard = () => {
                     <img
                         src="/schools/school1.png"
                         alt="Happy family"
-                        className="w-[87px] md:w-auto h-auto object-cover mb-4"
+                        className="w-21.75 md:w-auto h-auto object-cover mb-4"
                     />
 
                     <p className="text-[#65676C] text-left md:text-[20px] mb-8 leading-relaxed">
@@ -50,15 +50,20 @@ const TestimonialCard = () => {
                     />
                     <div className="text-left">
                         <p className="font-semibold text-gray-900 text-sm">
-                            Mara Hilpert
+                            {currTestimonialNo == 1 ? "Mara Hilpert" : currTestimonialNo == 2 ? "Emily Carter" : currTestimonialNo == 3 ? "Sophia Williams" : "Daniel Brown"}
                         </p>
                         <p className="text-[#777E90] text-sm">
-                            School Name Here
+                            {currTestimonialNo == 1 ? "Scholars Path School" : currTestimonialNo == 2 ? "Excellence Grammar School" : currTestimonialNo == 3 ? "Bright Future Academy" :     "Bright Future Academy"}
                         </p>
                     </div>
                 </div>
 
-                <button onClick={() => handleNextTestimonial("_", 1)} className={`hidden lg:flex xl:w-full xl:mr-8 items-center gap-3 ${currTestimonialNo == 1 && 'border-b'} pb-5`}>
+                <button
+                    onClick={() => handleNextTestimonial("_", 1)}
+                    className={`hidden lg:flex xl:w-full xl:mr-8 items-center gap-3 ${
+                        currTestimonialNo == 1 && "border-b"
+                    } pb-5`}
+                >
                     <img
                         src={`/avatar/1.png`}
                         alt="Mara Hilpert"
@@ -66,14 +71,19 @@ const TestimonialCard = () => {
                     />
                     <div className="text-left">
                         <p className="font-semibold text-gray-900 text-sm">
-                            Mara Hilpert
+                            Emily Carter
                         </p>
                         <p className="text-[#777E90] text-sm">
-                            School Name Here
+                            Scholars Path School
                         </p>
                     </div>
                 </button>
-                <button onClick={() => handleNextTestimonial("_", 2)} className={`hidden lg:flex xl:w-full xl:mr-8 items-center gap-3 ${currTestimonialNo == 2 && 'border-b'} pb-5`}>
+                <button
+                    onClick={() => handleNextTestimonial("_", 2)}
+                    className={`hidden lg:flex xl:w-full xl:mr-8 items-center gap-3 ${
+                        currTestimonialNo == 2 && "border-b"
+                    } pb-5`}
+                >
                     <img
                         src={`/avatar/2.png`}
                         alt="Mara Hilpert"
@@ -81,14 +91,19 @@ const TestimonialCard = () => {
                     />
                     <div className="text-left">
                         <p className="font-semibold text-gray-900 text-sm">
-                            Mara Hilpert
+                            Sophia Williams
                         </p>
                         <p className="text-[#777E90] text-sm">
-                            School Name Here
+                            Excellence Grammar School
                         </p>
                     </div>
                 </button>
-                <button onClick={() => handleNextTestimonial("_", 3)} className={`hidden lg:flex xl:w-full xl:mr-8 items-center gap-3 ${currTestimonialNo == 3 && 'border-b'} pb-5`}>
+                <button
+                    onClick={() => handleNextTestimonial("_", 3)}
+                    className={`hidden lg:flex xl:w-full xl:mr-8 items-center gap-3 ${
+                        currTestimonialNo == 3 && "border-b"
+                    } pb-5`}
+                >
                     <img
                         src={`/avatar/3.png`}
                         alt="Mara Hilpert"
@@ -96,14 +111,19 @@ const TestimonialCard = () => {
                     />
                     <div className="text-left">
                         <p className="font-semibold text-gray-900 text-sm">
-                            Mara Hilpert
+                            Daniel Brown
                         </p>
                         <p className="text-[#777E90] text-sm">
                             School Name Here
                         </p>
                     </div>
                 </button>
-                <button onClick={() => handleNextTestimonial("_", 4)} className={`hidden lg:flex xl:w-full xl:mr-8 items-center gap-3 ${currTestimonialNo == 4 && 'border-b'} pb-5`}>
+                <button
+                    onClick={() => handleNextTestimonial("_", 4)}
+                    className={`hidden lg:flex xl:w-full xl:mr-8 items-center gap-3 ${
+                        currTestimonialNo == 4 && "border-b"
+                    } pb-5`}
+                >
                     <img
                         src={`/avatar/4.png`}
                         alt="Mara Hilpert"

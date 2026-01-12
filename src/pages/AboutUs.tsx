@@ -34,11 +34,13 @@ const AboutUs = () => {
                     Social Proof & Credibility
                 </h1>
                 <p className="text-gray-600 lg:text-base leading-relaxed lg:max-w-[700px]">
-                    Lorem ipsum dolor sit amet consectetur. Etiam lectus at
-                    mauris duis nulla. Phasellus ullamcorper est faucibus quis
-                    sagittis eget pellentesque.
+                    Our school is recognized for its strong academic foundation
+                    and supportive learning environment. Experienced teachers
+                    guide students with care and dedication, ensuring steady
+                    progress and confidence. A focus on discipline, values, and
+                    achievement helps students grow academically and personally.
                 </p>
-                <TestimonialCard/>
+                <TestimonialCard />
             </div>
         </div>
     );

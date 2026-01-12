@@ -4,11 +4,9 @@ import SeeHowItWorksModal from "./SeeHowItWorksModal";
 import AvatarStack from "./AvatarStack";
 
 const HeroHome = ({
-    heroImg,
-    heroTxt,
+    slides
 }: {
-    heroImg: string;
-    heroTxt: string;
+    slides: { img: string; text: string }[];
 }) => {
     const [showModal, setShowModal] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -17,22 +15,6 @@ const HeroHome = ({
     const [currentTranslate, setCurrentTranslate] = useState(0);
     const [prevTranslate, setPrevTranslate] = useState(0);
     const sliderRef = useRef<HTMLDivElement>(null);
-
-    // Dummy slides data - replace with your actual data
-    const slides = [
-        {
-            img: heroImg,
-            text: heroTxt,
-        },
-        {
-            img: heroImg,
-            text: heroTxt,
-        },
-        {
-            img: heroImg,
-            text: heroTxt,
-        },
-    ];
 
     const totalSlides = slides.length;
 
