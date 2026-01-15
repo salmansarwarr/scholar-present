@@ -49,17 +49,14 @@ const HeroHome = ({
         }
 
         const movedBy = currentTranslate - prevTranslate;
-        const threshold = 50; // minimum drag distance to trigger slide change
+        const threshold = 50;
 
         if (movedBy < -threshold && currentSlide < totalSlides - 1) {
-            // Dragged left - next slide
             setCurrentSlide(currentSlide + 1);
         } else if (movedBy > threshold && currentSlide > 0) {
-            // Dragged right - previous slide
             setCurrentSlide(currentSlide - 1);
         }
 
-        // Reset translation
         setCurrentTranslate(0);
         setPrevTranslate(0);
     };
@@ -100,7 +97,7 @@ const HeroHome = ({
     return (
         <section
             ref={sliderRef}
-            className="relative w-full overflow-hidden md:max-h-208.5 cursor-grab active:cursor-grabbing select-none"
+            className="relative w-full overflow-hidden md:max-h-208.5 cursor-grab active:cursor-grabbing select-none touch-pan-y"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -135,20 +132,19 @@ const HeroHome = ({
                 ))}
             </div>
 
-            <div className="absolute inset-0 bg-cover bg-center sm:bg-top-left bg-no-repeat bg-[linear-gradient(180deg,rgba(45,158,83,0)_67.87%,#2D9E53_100%), linear-gradient(90deg,rgba(0,0,0,0)_50%,rgba(0,0,0,0.6)_100%)]"></div>
+            <div className="absolute inset-0 bg-cover bg-center sm:bg-top-left bg-no-repeat bg-[linear-gradient(180deg,rgba(45,158,83,0)_67.87%,#2D9E53_100%),linear-gradient(90deg,rgba(0,0,0,0)_50%,rgba(0,0,0,0.6)_100%)]"></div>
 
             {/* Content */}
-            <div className="relative z-10 h-250 md:h-162.5 lg:h-150 xl:h-152.5 2xl:h-175 lg:min-h-0 flex items-end lg:items-end mx-auto px-4 sm:px-6 xl:px-14 2xl:px-32 py-12 sm:py-16 lg:py-32 lg:pb-10">
-                <div className="flex flex-col lg:flex-row gap-2 sm:gap-10 lg:gap-12 items-center text-center lg:text-left lg:items-end w-full pointer-events-none">
+            <div className="relative z-10 min-h-240 h-140 md:h-162.5 lg:h-150 xl:h-152.5 2xl:h-175 flex items-end lg:items-end mx-auto px-4 sm:px-6 xl:px-14 2xl:px-32 py-8 sm:py-16 lg:py-32 lg:pb-10">
+                <div className="flex flex-col lg:flex-row gap-6 sm:gap-10 lg:gap-12 items-center text-center lg:text-left lg:items-end w-full">
                     {/* Left Column - Text Content */}
-                    <div className="text-white space-y-2 lg:space-y-4 sm:space-y-6 max-w-175 xl:max-w-216.5 w-full">
+                    <div className="text-white space-y-4 sm:space-y-6 max-w-175 xl:max-w-216.5 w-full">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-[60px] font-bold leading-tight transition-all duration-500">
                             {slides[currentSlide].text
                                 .split("<br/>")
                                 .map((line, i) => (
-                                    <span key={i}>
+                                    <span key={i} className="block">
                                         {line}
-                                       
                                     </span>
                                 ))}
                         </h1>
@@ -162,13 +158,19 @@ const HeroHome = ({
                         </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-1 lg:gap-3 sm:gap-4 pt-2 sm:pt-4 pointer-events-auto">
-                            <BlueBtn handleClick={handleOpenModal}>
-                                See How It Works (Free Demo)
-                            </BlueBtn>
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-3 pt-2 sm:pt-4 touch-auto">
+                            <button
+                                onClick={handleOpenModal}
+                                className="pointer-events-auto touch-auto"
+                                type="button"
+                            >
+                                <BlueBtn handleClick={handleOpenModal}>
+                                    See How It Works (Free Demo)
+                                </BlueBtn>
+                            </button>
                             <a
                                 href="#signin"
-                                className="text-white hover:text-gray-200 px-6 sm:px-8 py-3 sm:py-4 text-center text-[14px] sm:text-[16px] underline underline-offset-4"
+                                className="text-white hover:text-gray-200 px-6 sm:px-8 py-3 sm:py-4 text-center text-[14px] sm:text-[16px] underline underline-offset-4 pointer-events-auto touch-auto"
                             >
                                 Already Using Our Platform? Sign In
                             </a>
@@ -176,55 +178,49 @@ const HeroHome = ({
                     </div>
 
                     {/* Right Column - Stats Card */}
-                    <div className="lg:ml-auto w-full lg:w-auto md:hidden lg:block max-w-xs mx-auto lg:mx-0">
-                        <div className="w-full">
-                            {/* <img
-                                src="/avatars.png"
-                                alt="Member"
-                                className="border-white mx-auto lg:w-full h-auto w-40 pointer-events-none"
-                                draggable={false}
-                            /> */}
-                            <AvatarStack/>
+                    <div className="lg:ml-auto w-full lg:w-auto max-w-xs mx-auto lg:mx-0">
+    <div className="w-full">
+        <AvatarStack/>
 
-                            {/* Stats */}
-                            <div className="space-y-1 mt-2">
-                                <h3 className="text-[24px] sm:text-[28px] font-bold text-white">
-                                    <span className="text-[#D9FF00]">12k+</span>{" "}
-                                    <span className="font-bold">Members</span>
-                                </h3>
-                                <p className="text-gray-200 text-[13px] sm:text-[14px]">
-                                    Using Scholar Present Platform
-                                </p>
-                            </div>
+        {/* Stats */}
+        <div className="space-y-1 mt-2">
+            <h3 className="text-[24px] sm:text-[28px] font-bold text-white">
+                <span className="text-[#D9FF00]">12k+</span>{" "}
+                <span className="font-bold">Members</span>
+            </h3>
+            <p className="text-gray-200 text-[13px] sm:text-[14px]">
+                Using Scholar Present Platform
+            </p>
+        </div>
 
-                            {/* Progress Bar */}
-                            <div className="hidden lg:block mt-4 sm:mt-6 space-y-2">
-                                <div className="flex justify-between text-white text-sm font-medium">
-                                    <span>
-                                        {String(currentSlide + 1).padStart(
-                                            2,
-                                            "0"
-                                        )}
-                                    </span>
-                                    <span>
-                                        {String(totalSlides).padStart(2, "0")}
-                                    </span>
-                                </div>
-                                <div className="w-full bg-white h-1.5 rounded-full">
-                                    <div
-                                        className="bg-yellow-400 h-1.5 rounded-full transition-all duration-500"
-                                        style={{
-                                            width: `${
-                                                ((currentSlide + 1) /
-                                                    totalSlides) *
-                                                100
-                                            }%`,
-                                        }}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        {/* Progress Bar */}
+        <div className="mt-4 sm:mt-6 space-y-2">
+            <div className="flex justify-between text-white text-sm font-medium">
+                <span>
+                    {String(currentSlide + 1).padStart(
+                        2,
+                        "0"
+                    )}
+                </span>
+                <span>
+                    {String(totalSlides).padStart(2, "0")}
+                </span>
+            </div>
+            <div className="w-full bg-white h-1.5 rounded-full">
+                <div
+                    className="bg-yellow-400 h-1.5 rounded-full transition-all duration-500"
+                    style={{
+                        width: `${
+                            ((currentSlide + 1) /
+                                totalSlides) *
+                            100
+                        }%`,
+                    }}
+                />
+            </div>
+        </div>
+    </div>
+</div>
                 </div>
             </div>
         </section>

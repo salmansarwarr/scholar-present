@@ -112,10 +112,11 @@ const pathname = location.pathname;
 </a>
 
                             <a
-                                href="/"
+                                href="https://platform.scholarpresent.com/joinschool"
+                                target="_blank"
                                 className="text-gray-900 hover:text-gray-600 font-medium"
                             >
-                                Blog
+                                Channels
                             </a>
                             <a
                                 href="/"
@@ -324,7 +325,7 @@ const pathname = location.pathname;
                                 About
                             </a>
                             <a
-                                href="/"
+                                href="/join/form"
                                 className="text-white font-medium text-lg py-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >

@@ -7,31 +7,29 @@ const AvatarStack = () => {
   ];
 
   return (
-    <div className="flex items-end justify-start min-h-screen bg-transparent">
+    <div className="flex items-center justify-center lg:justify-start">
       <div className="relative flex items-center">
-        {/* Container with olive/military green background */}
-        <div className="relative flex items-center  rounded-full">
-          {avatars.map((avatar, index) => (
-            <div
-              key={avatar.id}
-              className="relative"
-              style={{
-                marginLeft: index === 0 ? '0' : '-16px',
-                zIndex: avatars.length - index,
-              }}
-            >
-              {/* Dark ring border */}
-              <div className="rounded-full p-[3px] bg-gray-300">
-                {/* Avatar image */}
-                <img
-                  src={avatar.src}
-                  alt={avatar.alt}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-[#2C3E3A]"
-                />
-              </div>
+        {avatars.map((avatar, index) => (
+          <div
+            key={avatar.id}
+            className="relative"
+            style={{
+              marginLeft: index === 0 ? '0' : '-16px',
+              zIndex: avatars.length - index,
+            }}
+          >
+            {/* White ring border for contrast */}
+            <div className="rounded-full p-[2px] bg-white shadow-md">
+              {/* Avatar image */}
+              <img
+                src={avatar.src}
+                alt={avatar.alt}
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover"
+                draggable={false}
+              />
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
