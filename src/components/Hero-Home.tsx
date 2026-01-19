@@ -26,6 +26,14 @@ const HeroHome = ({
         setShowModal(false);
     };
 
+    const handlePrevSlide = () => {
+        setCurrentSlide((prev) => (prev > 0 ? prev - 1 : totalSlides - 1));
+    };
+
+    const handleNextSlide = () => {
+        setCurrentSlide((prev) => (prev < totalSlides - 1 ? prev + 1 : 0));
+    };
+
     // Touch/Mouse events
     const handleDragStart = (clientX: number) => {
         setIsDragging(true);
@@ -134,8 +142,53 @@ const HeroHome = ({
 
             <div className="absolute inset-0 bg-cover bg-center sm:bg-top-left bg-no-repeat bg-[linear-gradient(180deg,rgba(45,158,83,0)_67.87%,#2D9E53_100%),linear-gradient(90deg,rgba(0,0,0,0)_50%,rgba(0,0,0,0.6)_100%)]"></div>
 
+            {/* Navigation Arrows */}
+            <button
+                onClick={handlePrevSlide}
+                className={`absolute left-2 sm:left-2 top-1/2 -translate-y-1/2 z-20 bg-transparent hover:bg-white/30 backdrop-blur-sm text-white p-3 sm:p-4 rounded-full transition-all duration-300 pointer-events-auto`}
+                aria-label="Previous slide"
+                type="button"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2.5}
+                    stroke="currentColor"
+                    className="w-5 h-5 sm:w-6 sm:h-6"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 19.5L8.25 12l7.5-7.5"
+                    />
+                </svg>
+            </button>
+
+            <button
+                onClick={handleNextSlide}
+                className={`absolute right-2 sm:right-2 top-1/2 -translate-y-1/2 z-20 bg-transparent hover:bg-white/30 backdrop-blur-sm text-white p-3 sm:p-4 rounded-full transition-all duration-300 pointer-events-auto`}
+                aria-label="Next slide"
+                type="button"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2.5}
+                    stroke="currentColor"
+                    className="w-5 h-5 sm:w-6 sm:h-6"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                    />
+                </svg>
+            </button>
+
             {/* Content */}
-            <div className="relative z-10 min-h-240 h-140 md:h-162.5 lg:h-150 xl:h-152.5 2xl:h-175 flex items-end lg:items-end mx-auto px-4 sm:px-6 xl:px-14 2xl:px-32 py-8 sm:py-16 lg:py-32 lg:pb-10">
+            <div className="relative z-10 h-240 md:h-162.5 lg:h-150 xl:h-152.5 2xl:h-175 flex items-end lg:items-end mx-auto px-4 sm:px-6 xl:px-14 2xl:px-32 py-8 sm:py-16 lg:py-32 lg:pb-10">
                 <div className="flex flex-col lg:flex-row gap-6 sm:gap-10 lg:gap-12 items-center text-center lg:text-left lg:items-end w-full">
                     {/* Left Column - Text Content */}
                     <div className="text-white space-y-4 sm:space-y-6 max-w-175 xl:max-w-216.5 w-full">
@@ -179,48 +232,48 @@ const HeroHome = ({
 
                     {/* Right Column - Stats Card */}
                     <div className="lg:ml-auto w-full lg:w-auto max-w-xs mx-auto lg:mx-0">
-    <div className="w-full">
-        <AvatarStack/>
+                        <div className="w-full">
+                            <AvatarStack/>
 
-        {/* Stats */}
-        <div className="space-y-1 mt-2">
-            <h3 className="text-[24px] sm:text-[28px] font-bold text-white">
-                <span className="text-[#D9FF00]">12k+</span>{" "}
-                <span className="font-bold">Members</span>
-            </h3>
-            <p className="text-gray-200 text-[13px] sm:text-[14px]">
-                Using Scholar Present Platform
-            </p>
-        </div>
+                            {/* Stats */}
+                            <div className="space-y-1 mt-2">
+                                <h3 className="text-[24px] sm:text-[28px] font-bold text-white">
+                                    <span className="text-[#D9FF00]">12k+</span>{" "}
+                                    <span className="font-bold">Members</span>
+                                </h3>
+                                <p className="text-gray-200 text-[13px] sm:text-[14px]">
+                                    Using Scholar Present Platform
+                                </p>
+                            </div>
 
-        {/* Progress Bar */}
-        <div className="mt-4 sm:mt-6 space-y-2">
-            <div className="flex justify-between text-white text-sm font-medium">
-                <span>
-                    {String(currentSlide + 1).padStart(
-                        2,
-                        "0"
-                    )}
-                </span>
-                <span>
-                    {String(totalSlides).padStart(2, "0")}
-                </span>
-            </div>
-            <div className="w-full bg-white h-1.5 rounded-full">
-                <div
-                    className="bg-yellow-400 h-1.5 rounded-full transition-all duration-500"
-                    style={{
-                        width: `${
-                            ((currentSlide + 1) /
-                                totalSlides) *
-                            100
-                        }%`,
-                    }}
-                />
-            </div>
-        </div>
-    </div>
-</div>
+                            {/* Progress Bar */}
+                            <div className="mt-4 sm:mt-6 space-y-2">
+                                <div className="flex justify-between text-white text-sm font-medium">
+                                    <span>
+                                        {String(currentSlide + 1).padStart(
+                                            2,
+                                            "0"
+                                        )}
+                                    </span>
+                                    <span>
+                                        {String(totalSlides).padStart(2, "0")}
+                                    </span>
+                                </div>
+                                <div className="w-full bg-white h-1.5 rounded-full">
+                                    <div
+                                        className="bg-yellow-400 h-1.5 rounded-full transition-all duration-500"
+                                        style={{
+                                            width: `${
+                                                ((currentSlide + 1) /
+                                                    totalSlides) *
+                                                100
+                                            }%`,
+                                        }}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

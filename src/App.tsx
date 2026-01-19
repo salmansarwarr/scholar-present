@@ -18,7 +18,7 @@ export default function SchoolManagementLanding() {
                     <Route path="/about-us" element={<AboutUs/>} />
                     <Route path="/pricing" element={<Pricing/>} />
                     <Route path="/join" element={<JoinMySchool />} />
-                    <Route path="/join/form" element={<JoinMySchoolForm />} />
+                    <Route path="/contact" element={<JoinMySchoolForm />} />
                 </Route>
             </Routes>
         </BrowserRouter>
